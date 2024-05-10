@@ -56,8 +56,8 @@ function addFallingImage() {
             render: {
                 sprite: {
                     texture: "assets/长江奶茶.png",
-                    xScale: imageWidth / 120,
-                    yScale: imageHeight / 120
+                    xScale: imageWidth / 180,
+                    yScale: imageHeight / 180
                 }
             }
         }
