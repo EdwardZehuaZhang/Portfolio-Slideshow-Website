@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function handleImageLoad() {
         imagesLoaded++;
+        updateProgressBar(imagesLoaded / slides.length * 100);  // Update the progress bar
         if (imagesLoaded === slides.length) {
             document.getElementById('loadingScreen').style.display = 'none';
             document.querySelector('.slideshow-container').style.display = 'block';
@@ -20,12 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// Function to start falling images only after the first slide change
-function startFallingImages() {
-    // Ensure this only happens once
-    if (window.fallingImagesActive) return;
-    window.fallingImagesActive = true;
-
-    // Assuming your falling images are initialized here
-    addFallingImage(); // This function should then control the repeated falling images as slides change
+function updateProgressBar(percent) {
+    const progressBar = document.getElementById('progressBar');
+    progressBar.style.width = `${percent}%`;
 }

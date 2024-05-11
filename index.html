@@ -11,6 +11,7 @@
 
     <div id="loadingScreen">
         <img src="assets/长江奶茶.png" alt="Loading" class="spinning-image">
+        <div id="progressBar" style="width: 0%; height: 5px; background-color: black; transition: width 0.5s;"></div>
     </div>    
 
     <div class="slideshow-container" style="display: none;">
@@ -74,7 +75,7 @@
 
     <a class="prev hidden" onclick="changeSlide(-1); startFallingImages();">❮</a>
     <a class="next hidden" onclick="changeSlide(1); startFallingImages();">❯</a>
-    
+
     <script src="js/loading.js"></script>
     <script src="js/gravity.js"></script>
     <script src="js/main.js"></script>
