@@ -6,7 +6,7 @@ const Engine = Matter.Engine,
 const engine = Engine.create();
 const world = engine.world;
 
-engine.gravity.y = 1.0; 
+engine.gravity.y = 0.8; 
 
 const render = Render.create({
     element: document.getElementById("matter-container"),
@@ -56,8 +56,8 @@ function addFallingImage() {
             render: {
                 sprite: {
                     texture: "assets/长江奶茶.png",
-                    xScale: imageWidth / 100,
-                    yScale: imageHeight / 100
+                    xScale: imageWidth / 200,
+                    yScale: imageHeight / 200
                 }
             }
         }
