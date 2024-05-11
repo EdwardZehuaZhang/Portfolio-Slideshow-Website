@@ -11,7 +11,7 @@ Welcome to the Portfolio Slideshow Website project! This dynamic website showcas
 
 ## Live Demo
 
-Check out the live demo of the project here: [Portfolio Slideshow Live Demo](https://yangtze-river-full-of-milkteaaa.github.io/Portfolio-Website/)
+Check out the live demo of the project here: [Portfolio Slideshow Live Demo](https://yangtze-river-full-of-milkteaaa.github.io/Portfolio-Slideshow-Website/)
 
 ## Setup and Installation
 
@@ -19,7 +19,7 @@ To get a local copy up and running, follow these simple steps:
 
 1. Clone the repo 
 ```sh
-git clone https://github.com/Yangtze-River-Full-of-Milkteaaa/Portfolio-Website.git
+git clone https://github.com/Yangtze-River-Full-of-Milkteaaa/Portfolio-Slideshow-Website.git
 ```
 
 2. Navigate to the project directory 
