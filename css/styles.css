@@ -110,3 +110,28 @@ a.next {
         transform: translateY(0) scale(1) rotate(0deg);
     }
 }
+
+#loadingScreen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+
+.spinning-image {
+    width: 100px; 
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(45deg); 
+    }
+}
