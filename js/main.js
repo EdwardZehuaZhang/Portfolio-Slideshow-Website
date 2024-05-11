@@ -36,6 +36,4 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    showSlide(currentSlide);
-});
+

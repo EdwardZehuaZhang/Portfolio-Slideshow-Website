@@ -138,7 +138,7 @@ a.next {
 }
 
 #progressBar {
-    width: 0%;  /* Initial width of the progress bar */
+    width: 0%;  
     height: 2px;
     background-color: #484f56;
     transition: width 0.5s ease;
