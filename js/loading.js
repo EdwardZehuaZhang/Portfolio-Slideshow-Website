@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     slides.forEach(img => {
         if (img.complete) {
-            handleImageLoad(); // Handle already loaded images
+            handleImageLoad();
         } else {
             img.onload = handleImageLoad;
         }
@@ -18,4 +18,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
-
