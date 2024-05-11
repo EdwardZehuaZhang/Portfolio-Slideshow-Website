@@ -126,8 +126,8 @@ a.next {
 }
 
 .spinning-image {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     animation: spin 1.7s steps(8, end) infinite;  
     margin-bottom: 50px;
 }
