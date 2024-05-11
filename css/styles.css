@@ -122,16 +122,12 @@ a.next {
 }
 
 .spinning-image {
-    width: 100px;  /* Adjust the size as needed */
-    height: 100px; /* Adjust the size as needed */
-    animation: spin 0.7s steps(1) infinite;
+    width: 100px;
+    height: 100px;
+    animation: spin 0.7s steps(8, end) infinite;  // Adjusted for each step to take 0.7s
 }
 
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
