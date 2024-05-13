@@ -1,3 +1,5 @@
+![](Demo.gif)
+
 # Portfolio Slideshow Website
 
 Welcome to the Portfolio Slideshow Website project! This dynamic website showcases a collection of images from my portfolio in a slideshow format, enhanced with a unique interactive feature where images fall across the screen on navigation. This project is perfect for junior artists, photographers, and creatives who want to present their work in an simple yet engaging and visually appealing way.

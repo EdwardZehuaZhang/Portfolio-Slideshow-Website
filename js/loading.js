@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function handleImageLoad() {
         imagesLoaded++;
-        updateProgressBar(imagesLoaded / slides.length * 100);  // Update the progress bar
+        updateProgressBar(imagesLoaded / slides.length * 100);  
         if (imagesLoaded === slides.length) {
             document.getElementById('loadingScreen').style.display = 'none';
             document.querySelector('.slideshow-container').style.display = 'block';
