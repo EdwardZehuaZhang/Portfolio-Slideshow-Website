@@ -13,7 +13,7 @@ Welcome to the Portfolio Slideshow Website project! This dynamic website showcas
 
 ## Live Demo
 
-Check out the live demo of the project here: [Portfolio Slideshow Live Demo](https://yangtze-river-full-of-milkteaaa.github.io/Portfolio-Slideshow-Website/)
+Check out the live demo of the project here: [Live Demo](https://yangtze-river-full-of-milkteaaa.github.io/Portfolio-Slideshow-Website/)
 
 ## Setup and Installation
 
