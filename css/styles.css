@@ -146,7 +146,7 @@ a.next {
 
 @media only screen and (orientation: portrait) and (max-width: 768px) {
     #rotateVideo {
-        display: block;
+        display: none; 
         position: fixed;
         top: 5%;
         left: 50%;

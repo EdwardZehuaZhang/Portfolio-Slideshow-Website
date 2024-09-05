@@ -33,18 +33,18 @@ function isMobileDevice() {
 
 function handleOrientationChange() {
     const video = document.getElementById('rotateVideo');
+    const loadingScreen = document.getElementById('loadingScreen');
 
-
-    if (isMobileDevice()) {
+    if (loadingScreen.style.display === 'none' && isMobileDevice()) {
         if (window.innerHeight > window.innerWidth) {
-
             video.style.display = 'block';
             video.play();
         } else {
-
             video.style.display = 'none';
             video.pause();
         }
+    } else {
+        video.style.display = 'none'; 
     }
 }
 
@@ -52,7 +52,31 @@ function handleOrientationChange() {
 window.addEventListener('resize', handleOrientationChange);
 
 
-document.addEventListener('DOMContentLoaded', handleOrientationChange);
+document.addEventListener('DOMContentLoaded', function () {
+    const slides = document.querySelectorAll('.slide img');
+    let imagesLoaded = 0;
+
+    slides.forEach(img => {
+        if (img.complete) {
+            handleImageLoad();
+        } else {
+            img.onload = handleImageLoad;
+        }
+    });
+
+    function handleImageLoad() {
+        imagesLoaded++;
+        updateProgressBar(imagesLoaded / slides.length * 100);  
+        if (imagesLoaded === slides.length) {
+            document.getElementById('loadingScreen').style.display = 'none';
+            document.querySelector('.slideshow-container').style.display = 'block';
+            document.querySelectorAll('.prev, .next').forEach(el => el.classList.remove('hidden'));
+
+            handleOrientationChange(); 
+        }
+    }
+});
+
 
 
 prevButton.addEventListener('pointerup', () => {
