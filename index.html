@@ -14,6 +14,8 @@
         <div id="progressBar" style="width: 0%; height: 2px; background-color: #484f56; transition: width 0.5s;"></div>
     </div>    
 
+    <div id="falling-images-container"></div>
+
     <div class="slideshow-container" style="display: none;">
         <div class="slide active-slide" data-color="">
             <img src="assets/Portfolio_1.png" alt="Slide 1">
@@ -75,6 +77,11 @@
 
     <a class="prev hidden" onclick="changeSlide(-1); startFallingImages();">❮</a>
     <a class="next hidden" onclick="changeSlide(1); startFallingImages();">❯</a>
+
+    <video id="rotateVideo" style="display: none; background-color: white;" width="100%" height="100%" muted loop playsinline>
+        <source src="assets/rotate.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
     <script src="js/loading.js"></script>
     <script src="js/gravity.js"></script>

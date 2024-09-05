@@ -25,3 +25,24 @@ function updateProgressBar(percent) {
     const progressBar = document.getElementById('progressBar');
     progressBar.style.width = `${percent}%`;
 }
+
+function adjustSlideshowHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.querySelector('.slideshow-container').style.height = `${vh * 100}px`;
+}
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    adjustSlideshowHeight();
+});
+
+
+window.addEventListener('resize', () => {
+    adjustSlideshowHeight();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const fallingImagesContainer = document.getElementById('falling-images-container');
+    document.body.appendChild(fallingImagesContainer); 
+});
+

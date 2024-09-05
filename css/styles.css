@@ -14,15 +14,16 @@ body {
     left: 0;
 }
 
+
 .slideshow-container {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 100%; 
+    justify-content: center; 
+    align-items: center; 
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
+
 
 .slide img {
     width: auto;
@@ -52,11 +53,9 @@ body {
 }
 
 a.prev, a.next {
-    cursor: pointer;
     position: absolute;
     top: 50%;
-    width: auto;
-    margin-top: -22px;
+    transform: translateY(-50%); 
     padding: 16px;
     color: black;
     font-weight: bold;
@@ -82,7 +81,8 @@ a.next {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; 
+    pointer-events: none;
+    z-index: 9999;
 }
 
 .falling-image {
@@ -144,9 +144,29 @@ a.next {
     transition: width 0.5s ease;
 }
 
+@media only screen and (orientation: portrait) and (max-width: 768px) {
+    #rotateVideo {
+        display: block;
+        position: fixed;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        width: 50vw;
+        height: auto;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 10px;
+    }
+}
+
+
 @media only screen and (orientation: landscape) {
-    .slide img {
-        width: 100vw;  
-        height: auto;  
+    .slideshow-container {
+        height: 100vh; 
+    }
+
+    #rotateVideo {
+        display: none; 
     }
 }

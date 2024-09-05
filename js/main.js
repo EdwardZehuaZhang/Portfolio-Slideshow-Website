@@ -11,20 +11,62 @@ function showSlide(index) {
         slide.classList.toggle("active-slide", i === currentSlide);
     });
 
-    isTransitioning = false;
-
     addFallingImage();
+
+    setTimeout(() => {
+        isTransitioning = false;
+    }, 300); 
 }
 
 function changeSlide(offset) {
     if (!isTransitioning) {
-        isTransitioning = true;
-        showSlide(currentSlide + offset);
+        isTransitioning = true; 
+        showSlide(currentSlide + offset); 
     }
 }
 
-prevButton.onclick = () => changeSlide(-1);
-nextButton.onclick = () => changeSlide(1);
+
+function isMobileDevice() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+}
+
+
+function handleOrientationChange() {
+    const video = document.getElementById('rotateVideo');
+
+
+    if (isMobileDevice()) {
+        if (window.innerHeight > window.innerWidth) {
+
+            video.style.display = 'block';
+            video.play();
+        } else {
+
+            video.style.display = 'none';
+            video.pause();
+        }
+    }
+}
+
+
+window.addEventListener('resize', handleOrientationChange);
+
+
+document.addEventListener('DOMContentLoaded', handleOrientationChange);
+
+
+prevButton.addEventListener('pointerup', () => {
+    if (!isTransitioning) {
+        changeSlide(-1);
+    }
+});
+
+nextButton.addEventListener('pointerup', () => {
+    if (!isTransitioning) {
+        changeSlide(1);
+    }
+});
+
 
 document.addEventListener("keydown", (e) => {
     if (!isTransitioning) {
@@ -40,22 +82,39 @@ document.addEventListener("keydown", (e) => {
 let startX = 0;
 let endX = 0;
 
-document.addEventListener("touchstart", function(e) {
-    startX = e.touches[0].clientX;
+document.addEventListener("pointerdown", function(e) {
+    startX = e.clientX || e.touches?.[0]?.clientX;
 });
 
-document.addEventListener("touchmove", function(e) {
-    endX = e.touches[0].clientX;
+document.addEventListener("pointermove", function(e) {
+    endX = e.clientX || e.touches?.[0]?.clientX;
 });
 
-document.addEventListener("touchend", function() {
+document.addEventListener("pointerup", function() {
     let swipeDistance = endX - startX;
-    
-    if (swipeDistance > 50) {
-        // Swipe right (to the previous slide)
-        changeSlide(-1);
-    } else if (swipeDistance < -50) {
-        // Swipe left (to the next slide)
-        changeSlide(1);
+
+    if (!isTransitioning) {
+        if (swipeDistance > 50) {
+
+            changeSlide(-1);
+        } else if (swipeDistance < -50) {
+  
+            changeSlide(1);
+        }
     }
+});
+
+function adjustSlideshowHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.querySelector('.slideshow-container').style.height = `${vh * 100}px`;
+}
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    adjustSlideshowHeight();
+});
+
+
+window.addEventListener('resize', () => {
+    adjustSlideshowHeight();
 });
