@@ -37,3 +37,25 @@ document.addEventListener("keydown", (e) => {
 });
 
 
+let startX = 0;
+let endX = 0;
+
+document.addEventListener("touchstart", function(e) {
+    startX = e.touches[0].clientX;
+});
+
+document.addEventListener("touchmove", function(e) {
+    endX = e.touches[0].clientX;
+});
+
+document.addEventListener("touchend", function() {
+    let swipeDistance = endX - startX;
+    
+    if (swipeDistance > 50) {
+        // Swipe right (to the previous slide)
+        changeSlide(-1);
+    } else if (swipeDistance < -50) {
+        // Swipe left (to the next slide)
+        changeSlide(1);
+    }
+});

@@ -143,3 +143,10 @@ a.next {
     background-color: #484f56;
     transition: width 0.5s ease;
 }
+
+@media only screen and (orientation: landscape) {
+    .slide img {
+        width: 100vw;  
+        height: auto;  
+    }
+}
